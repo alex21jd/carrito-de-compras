@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Laptop",
+        "precio": 500.00,
+        "descripcion": "Laptop básica para uso diario",
+        "imagen": "💻"
+    },
+    {
+        "id": 2,
+        "nombre": "Mouse",
+        "precio": 25.99,
+        "descripcion": "Mouse inalámbrico",
+        "imagen": "🖱️"
+    },
+    {
+        "id": 3,
+        "nombre": "Teclado",
+        "precio": 45.00,
+        "descripcion": "Teclado mecánico",
+        "imagen": "⌨️"
+    }
+]

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏪 Tienda Online</h1>
+            <div class="header-actions">
+                <button class="login-btn">
+                    <span class="login-icon">👤</span>
+                    <span class="login-text">Iniciar Sesión</span>
+                </button>
+                <div class="cart-summary">
+                    <span class="cart-icon">🛒</span>
+                    <span>Items: <span id="cart-count">0</span></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-layout">
+            <!-- Lista de productos -->
+            <section class="products-section">
+                <h2>Productos Disponibles</h2>
+                <div id="products-container" class="products-grid">
+                    <!-- Los productos se generarán dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Carrito de compras -->
+            <aside id="cart-section" class="cart-sidebar">
+                <div class="cart-content">
+                    <div class="cart-header">
+                        <h2>🛒 Mi Carrito</h2>
+                        <button id="clear-cart" class="clear-cart-btn">Vaciar</button>
+                    </div>
+                    <div id="cart-container">
+                        <div id="cart-items">
+                            <!-- Los items del carrito se generarán dinámicamente -->
+                        </div>
+                    </div>
+                    <div id="empty-cart" class="empty-cart">
+                        <p>🛍️ Tu carrito está vacío</p>
+                        <small>¡Agrega algunos productos!</small>
+                    </div>
+                </div>
+                <div id="cart-total" class="cart-total">
+                    <h3>Total: $<span id="total-amount">0.00</span></h3>
+                    <button id="checkout-btn" class="checkout-btn">Proceder al Pago</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
