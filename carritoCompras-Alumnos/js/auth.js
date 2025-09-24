@@ -218,12 +218,14 @@ export function mostrarModalProducto(productoId = null) {
       try {
         const token = (usuarioActual && usuarioActual.token) || '';
         //--------------Función de creación/edición ------------------------
-
-        // Refrescar productos locales (pedir 1 item actualizado o volver a listar fuera de este flujo)
         if (esEdicion) {
+          await apiUpdateProduct(productoId, body, token);
           const p = await apiGetProduct(productoId, token);
           const idx = productos.findIndex((x) => x.id === productoId);
           if (idx >= 0) productos[idx] = p;
+        } else {
+          const nuevo = await apiCreateProduct(body, token);
+          productos.push(nuevo);
         }
         mostrarMensaje('Producto guardado', 'success');
         mostrarProductosAdmin();
@@ -253,8 +255,7 @@ export function confirmarEliminarProducto(id) {
       try {
         const token = (usuarioActual && usuarioActual.token) || '';
         //--------------Función de eliminación ------------------------
-        
-        // Quitar del arreglo local
+        await apiDeleteProduct(id, token);
         const i = productos.findIndex((x) => x.id === id);
         if (i >= 0) productos.splice(i, 1);
         mostrarMensaje('Producto eliminado', 'success');
