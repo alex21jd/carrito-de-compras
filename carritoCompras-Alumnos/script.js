@@ -505,7 +505,7 @@ function mostrarModalLogin() {
         <p style="text-align: center; margin-top: 15px;">
             ¿No tienes cuenta? 
             <a href="#" onclick="cerrarModal(document.querySelector('.modal-overlay')); setTimeout(() => mostrarModalRegister(), 100);" 
-               style="color: #007bff; text-decoration: none; font-weight: bold;">Regístrate aquí</a>
+            style="color: #007bff; text-decoration: none; font-weight: bold;">Regístrate aquí</a>
         </p>
         `,
         textoConfirmar: 'Iniciar sesión',
@@ -540,7 +540,7 @@ function mostrarModalRegister() {
         <p style="text-align: center; margin-top: 15px;">
             ¿Ya tienes cuenta? 
             <a href="#" onclick="cerrarModal(document.querySelector('.modal-overlay')); setTimeout(() => mostrarModalLogin(), 100);" 
-               style="color: #007bff; text-decoration: none; font-weight: bold;">Inicia sesión aquí</a>
+            style="color: #007bff; text-decoration: none; font-weight: bold;">Inicia sesión aquí</a>
         </p>
         `,
         textoConfirmar: 'Crear cuenta',
