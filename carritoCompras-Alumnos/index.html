@@ -11,6 +11,10 @@
         <header>
             <h1>🏪 Tienda Online</h1>
             <div class="header-actions">
+                <button class="admin-toggle-btn" id="admin-toggle" style="display: none;">
+                    <span class="admin-icon">⚙️</span>
+                    <span class="admin-text">Administrar</span>
+                </button>
                 <button class="login-btn">
                     <span class="login-icon">👤</span>
                     <span class="login-text">Iniciar Sesión</span>
@@ -22,7 +26,7 @@
             </div>
         </header>
 
-        <main class="main-layout">
+        <main class="main-layout" id="customer-view">
             <!-- Lista de productos -->
             <section class="products-section">
                 <h2>Productos Disponibles</h2>
@@ -54,8 +58,24 @@
                 </div>
             </aside>
         </main>
+
+        <!-- Vista de administración -->
+        <main class="admin-layout" id="admin-view" style="display: none;">
+            <section class="admin-section">
+                <div class="admin-header">
+                    <h2>⚙️ Administración de Productos</h2>
+                    <button class="btn-primary" id="new-product-btn">➕ Nuevo Producto</button>
+                </div>
+                
+                <div class="admin-content">
+                    <div class="products-admin-grid" id="admin-products-container">
+                        <!-- Los productos para administrar se generarán dinámicamente -->
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
