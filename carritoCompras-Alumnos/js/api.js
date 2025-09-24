@@ -80,16 +80,45 @@ export async function apiGetProduct(id, token) {
 
 /** Crea un producto y retorna el objeto normalizado (si el backend lo devuelve) */
 export async function apiCreateProduct(body, token) {
-
+  const resp = await fetch(PRODUCTS_URL, {
+    method: 'POST',
+    headers: authHeaders(token),
+    body: JSON.stringify(body)
+  });
+  const data = await resp.json().catch(() => ({}));
+  if (!resp.ok) {
+    const msg = data?.error || data?.message || 'Error al crear producto';
+    throw new Error(msg);
+  }
+  return normalizarProducto(data);
 }
 
 /** Actualiza un producto y retorna el objeto normalizado (si el backend lo devuelve) */
 export async function apiUpdateProduct(id, body, token) {
-
+  const resp = await fetch(`${PRODUCTS_URL}/${id}`, {
+    method: 'PUT',
+    headers: authHeaders(token),
+    body: JSON.stringify(body)
+  });
+  const data = await resp.json().catch(() => ({}));
+  if (!resp.ok) {
+    const msg = data?.error || data?.message || 'Error al actualizar producto';
+    throw new Error(msg);
+  }
+  return normalizarProducto(data);
 }
 
 /** Elimina un producto */
 export async function apiDeleteProduct(id, token) {
-
+  const resp = await fetch(`${PRODUCTS_URL}/${id}`, {
+    method: 'DELETE',
+    headers: authHeaders(token)
+  });
+  if (!resp.ok) {
+    const data = await resp.json().catch(() => ({}));
+    const msg = data?.error || data?.message || 'Error al eliminar producto';
+    throw new Error(msg);
+  }
+  return true;
 }
 
